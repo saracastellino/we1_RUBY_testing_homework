@@ -107,29 +107,29 @@ class TestPetShop < Minitest::Test
     assert_equal(0, sold)
   end
 # 6
-  def test_increase_pets_sold
-    increase_pets_sold(@pet_shop,2)
-    sold = increase_pets_sold(@pet_shop)
-    assert_equal(2, count)
-  end
+  # def test_increase_pets_sold
+  #   increase_pets_sold(@pet_shop,2)
+  #   sold = increase_pets_sold(@pet_shop)
+  #   assert_equal(2, sold.count)
+  # end
 # 7
   def test_stock_count
     count = stock_count(@pet_shop)
     assert_equal(6, count)
   end
 # 8
-  def test_all_pets_by_breed__found
-    pets = all_pets_by_breed__found(@pet_shop, "British Shorthair")
-    assert_equal(2, ount)
-  end
+  # def test_all_pets_by_breed__found
+  #   pets = all_pets_by_breed__found(@pet_shop, "British Shorthair")
+  #   assert_equal(2, pets.count)
+  # end
 # 9
   # def test_all_pets_by_breed__not_found
   #   pets = pets_by_breed(@pet_shop, "Dalmation")
   #   assert_equal(0, pets.count)
   # end
-# 10
+# # 10
   # def test_find_pet_by_name__returns_pet
-  #   pet = find_pet_by_name(@pet_shop, "Arthur")
+  #   pet = find_pet_by_name__returns_pet(@pet_shop, "Arthur")
   #   assert_equal("Arthur", pet[:name])
   # end
 # 11
@@ -140,7 +140,7 @@ class TestPetShop < Minitest::Test
 # 12
   # def test_remove_pet_by_name
   #   remove_pet_by_name(@pet_shop, "Arthur")
-  #   pet = find_pet_by_name(@pet_shop,"Arthur")
+  #   pet = remove_pet_by_name(@pet_shop, "Arthur")
   #   assert_nil(pet)
   # end
 # 13
@@ -150,10 +150,10 @@ class TestPetShop < Minitest::Test
   #   assert_equal(7, count)
   # end
 # 14
-  # def test_customer_cash
-  #   cash = customer_cash(@customers[0])
-  #   assert_equal(1000, cash)
-  # end
+  def test_customer_cash
+    cash = customer_cash(@customers[0])
+    assert_equal(1000, cash)
+  end
 # 15
   # def test_remove_customer_cash
   #   customer = @customers[0]
