@@ -119,12 +119,12 @@ class TestPetShop < Minitest::Test
   end
 # 8
   def test_all_pets_by_breed__found
-    pets = all_pets_by_breed(@pet_shop, "British Shorthair")
+    pets = pets_by_breed(@pet_shop, "British Shorthair")
     assert_equal(2, pets.count)
   end
 # 9
   def test_all_pets_by_breed__not_found
-    pets = all_pets_by_breed(@pet_shop, "Dalmation")
+    pets = pets_by_breed(@pet_shop, "Dalmation")
     assert_equal(0, pets.count)
   end
 # 10
@@ -140,7 +140,7 @@ class TestPetShop < Minitest::Test
 # 12
   def test_remove_pet_by_name
     remove_pet_by_name(@pet_shop, "Arthur")
-    pet = remove_pet_by_name(@pet_shop, "Arthur")
+    pet = find_pet_by_name(@pet_shop,"Arthur")
     assert_nil(pet)
   end
 # 13
@@ -191,6 +191,7 @@ class TestPetShop < Minitest::Test
     can_buy_pet = customer_can_afford_pet(customer, @new_pet)
     assert_equal(true, can_buy_pet)
   end
+
 
   # These are 'integration' tests so we want multiple asserts.
   # If one fails the entire test should fail
