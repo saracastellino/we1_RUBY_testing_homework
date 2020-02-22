@@ -117,33 +117,16 @@ class TestPetShop < Minitest::Test
     count = stock_count(@pet_shop)
     assert_equal(6, count)
   end
-
-# #########FIND AN ITEM ##############
-  #def is_item_in_array(array, item_to_find)
-#   for item in array
-#     if item == item_to_find
-#       return true
-#     end
-#   end
-#   return false
-# end
-
-
-# any_dalmations = pets.select { |pet| pet[:breed] == "Dalmation" }.any?
-
-# h.has_value?
-###########################################
-
 # 8
-  # def test_all_pets_by_breed__found
-  #   pets = all_pets_by_breed__found(@pet_shop, "British Shorthair")
-  #   assert_equal(2, pets.count)
-  # end
+  def test_all_pets_by_breed__found
+    pets = all_pets_by_breed(@pet_shop, "British Shorthair")
+    assert_equal(2, pets.count)
+  end
 # 9
-  # def test_all_pets_by_breed__not_found
-  #   pets = pets_by_breed(@pet_shop, "Dalmation")
-  #   assert_equal(0, pets.count)
-  # end
+  def test_all_pets_by_breed__not_found
+    pets = all_pets_by_breed(@pet_shop, "Dalmation")
+    assert_equal(0, pets.count)
+  end
 # # 10
   # def test_find_pet_by_name__returns_pet
   #   pet = find_pet_by_name__returns_pet(@pet_shop, "Arthur")
@@ -208,10 +191,10 @@ class TestPetShop < Minitest::Test
     can_buy_pet = customer_can_afford_pet(customer, @new_pet)
     assert_equal(true, can_buy_pet)
   end
-# 4
+
   # These are 'integration' tests so we want multiple asserts.
   # If one fails the entire test should fail
-# 5
+# 4
   # def test_sell_pet_to_customer__pet_found
   #   customer = @customers[0]
   #   pet = find_pet_by_name(@pet_shop,"Arthur")
@@ -223,7 +206,7 @@ class TestPetShop < Minitest::Test
   #   assert_equal(100, customer_cash(customer))
   #   assert_equal(1900, total_cash(@pet_shop))
   # end
-# 6
+# 5
   # def test_sell_pet_to_customer__pet_not_found
   #   customer = @customers[0]
   #   pet = find_pet_by_name(@pet_shop,"Dave")
@@ -235,7 +218,7 @@ class TestPetShop < Minitest::Test
   #   assert_equal(1000, customer_cash(customer))
   #   assert_equal(1000, total_cash(@pet_shop))
   # end
-# 7
+# 6
   # def test_sell_pet_to_customer__insufficient_funds
   #   customer = @customers[1]
   #   pet = find_pet_by_name(@pet_shop,"Arthur")
