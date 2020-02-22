@@ -91,13 +91,13 @@ class TestPetShop < Minitest::Test
   end
 # 3
   def test_add_or_remove_cash__add
-    add_or_remove_cash__add(@pet_shop,10)
+    add_or_remove_cash(@pet_shop,10)
     cash = total_cash(@pet_shop)
     assert_equal(1010, cash)
   end
 # 4
   def test_add_or_remove_cash__remove
-    add_or_remove_cash__remove(@pet_shop,-10)
+    add_or_remove_cash(@pet_shop,-10)
     cash = total_cash(@pet_shop)
     assert_equal(990, cash)
   end
@@ -127,22 +127,22 @@ class TestPetShop < Minitest::Test
     pets = all_pets_by_breed(@pet_shop, "Dalmation")
     assert_equal(0, pets.count)
   end
-# # 10
-  # def test_find_pet_by_name__returns_pet
-  #   pet = find_pet_by_name__returns_pet(@pet_shop, "Arthur")
-  #   assert_equal("Arthur", pet[:name])
-  # end
+# 10
+  def test_find_pet_by_name__returns_pet
+    pet = find_pet_by_name(@pet_shop, "Arthur")
+    assert_equal("Arthur", pet[:name])
+  end
 # 11
-  # def test_find_pet_by_name__returns_nil
-  #   pet = find_pet_by_name(@pet_shop, "Fred")
-  #   assert_nil(pet)
-  # end
+  def test_find_pet_by_name__returns_nil
+    pet = find_pet_by_name(@pet_shop, "Fred")
+    assert_nil(pet)
+  end
 # 12
-  # def test_remove_pet_by_name
-  #   remove_pet_by_name(@pet_shop, "Arthur")
-  #   pet = remove_pet_by_name(@pet_shop, "Arthur")
-  #   assert_nil(pet)
-  # end
+  def test_remove_pet_by_name
+    remove_pet_by_name(@pet_shop, "Arthur")
+    pet = remove_pet_by_name(@pet_shop, "Arthur")
+    assert_nil(pet)
+  end
 # 13
   def test_add_pet_to_stock
     add_pet_to_stock(@pet_shop, @new_pet)
@@ -179,13 +179,13 @@ class TestPetShop < Minitest::Test
     can_buy_pet = customer_can_afford_pet(customer, @new_pet)
     assert_equal(true, can_buy_pet)
   end
-# # 2
+# 2
   def test_customer_can_afford_pet__insufficient_funds
     customer = @customers[1]
     can_buy_pet = customer_can_afford_pet(customer, @new_pet)
     assert_equal(false, can_buy_pet)
   end
-# # 3
+# 3
   def test_customer_can_afford_pet__exact_funds
     customer = @customers[2]
     can_buy_pet = customer_can_afford_pet(customer, @new_pet)
