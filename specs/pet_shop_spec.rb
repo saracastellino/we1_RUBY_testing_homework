@@ -107,16 +107,33 @@ class TestPetShop < Minitest::Test
     assert_equal(0, sold)
   end
 # 6
-  # def test_increase_pets_sold
-  #   increase_pets_sold(@pet_shop,2)
-  #   sold = increase_pets_sold(@pet_shop)
-  #   assert_equal(2, sold.count)
-  # end
+  def test_increase_pets_sold
+    increase_pets_sold(@pet_shop,2)
+    sold = pets_sold(@pet_shop)
+    assert_equal(2, sold)
+  end
 # 7
   def test_stock_count
     count = stock_count(@pet_shop)
     assert_equal(6, count)
   end
+
+# #########FIND AN ITEM ##############
+  #def is_item_in_array(array, item_to_find)
+#   for item in array
+#     if item == item_to_find
+#       return true
+#     end
+#   end
+#   return false
+# end
+
+
+# any_dalmations = pets.select { |pet| pet[:breed] == "Dalmation" }.any?
+
+# h.has_value?
+###########################################
+
 # 8
   # def test_all_pets_by_breed__found
   #   pets = all_pets_by_breed__found(@pet_shop, "British Shorthair")
