@@ -24,16 +24,16 @@ def stock_count(pet_shop)
 end
 # 8 9
 def pets_by_breed(pet_shop, breed)
- pet_shop[:pets].select { | pets | pets[:breed] == breed }
+ pet_shop[:pets].select { | pet | pet[:breed] == breed }
 end
 # 10 11
 def find_pet_by_name(pet_shop, name)
- pet_shop[:pets].find { | pets | p pets[:name] == name }
+ pet_shop[:pets].find { | pet | p pet[:name] == name }
 end
 # 12
 def remove_pet_by_name(pet_shop, name)
- pet_shop[:pets].delete_if { | pets | pets[:name] == name }
- pet_shop[:pets].find { | pets | p pets[:name] == name }
+ pet_shop[:pets].delete_if { | pet | pet[:name] == name }
+ pet_shop[:pets].find { | pet | p pet[:name] == name }
 end
 #13
 def add_pet_to_stock(pet_shop, new_pet)
@@ -59,7 +59,7 @@ end
 
 # OPTIONAL
 
-# 1
+# 1 2 3
 def customer_can_afford_pet(customers, new_pet)
   if customers[:cash] >= new_pet[:price]
     return true
